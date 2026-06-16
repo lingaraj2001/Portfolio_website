@@ -1,0 +1,226 @@
+/* ============================================================
+   skills.module.css
+   Tailwind 3.4.1 compatible | Dark + Light | Mobile-first
+   ============================================================ */
+
+.skills-page {
+  /* inherits .page from global.css */
+}
+
+/* ============================================================
+   SKILLS GRID SECTION
+   ============================================================ */
+.skills-grid-section {
+  padding: 4rem 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.skills-grid {
+  /* @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* ============================================================
+   SKILL CATEGORY CARD
+   ============================================================ */
+.skill-category-card {
+  /* @apply rounded-2xl p-5 border transition-all duration-250 */
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--card-color, var(--accent-from));
+}
+
+/* Card Header */
+.skill-category-header {
+  /* @apply flex items-center gap-3 */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skill-icon-wrapper {
+  /* @apply flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+  /* bg + color applied inline */
+}
+
+.skill-category-title {
+  /* @apply text-sm font-bold tracking-wide */
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Skill Tags */
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skill-bar-track {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s ease-out;
+}
+
+.skill-bar-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+.skill-tag {
+  /* @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium */
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.skill-category-card:hover .skill-tag {
+  background: color-mix(in srgb, var(--card-color, var(--accent-from)) 8%, transparent);
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--card-color, var(--accent-from)) 30%, transparent);
+}
+
+/* ============================================================
+   COMPETENCIES SECTION
+   ============================================================ */
+.competencies-section {
+  padding: 4rem 1.5rem 5rem;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.competencies-list {
+  /* @apply flex flex-col gap-3 max-w-3xl mx-auto */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.competency-item {
+  /* @apply flex items-start gap-3 p-4 rounded-xl */
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.competency-item:hover {
+  border-color: var(--accent-from);
+  transform: translateX(4px);
+}
+
+.competency-icon {
+  /* @apply flex-shrink-0 mt-0.5 */
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  color: var(--accent-from);
+}
+
+.competency-item p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 480px) {
+  .skills-grid-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .competencies-section {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .skill-category-card {
+    padding: 1rem;
+  }
+
+  .competency-item {
+    padding: 0.875rem 1rem;
+  }
+
+  .competency-item p {
+    font-size: 0.875rem;
+  }
+}
