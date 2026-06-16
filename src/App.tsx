@@ -1,16 +1,17 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Experience from './pages/Experience';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
+import { HashRouter } from 'react-router-dom';
 
 // FIXED: Direct side-effect import for global styles
 import './App.css'; 
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app">
         <Navbar />
         <main className="main-content">
@@ -25,7 +26,7 @@ function App() {
           <p>© 2026 Portfolio. Built with React & Vite.</p>
         </footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
